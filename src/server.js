@@ -1,5 +1,5 @@
 'use strict';
-import "babel-polyfill";
+//import "babel-polyfill";
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
