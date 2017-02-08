@@ -21,10 +21,16 @@ I have set up this demo to use webpack. Webpack is used to browserify all the re
 This app should clientside on port run at be available localhost on port 8080 i.e. http://localhost:8080
 
     $ node_modules/.bin/http-server src/static
-    
-However as requested this has been set up to run serverside as well. To run in serverside mode 
+
+However as requested this has been set up to run serverside as well. To run in serverside mode
 
     $ NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js
+
+I have also created a wrapper for this that makes it easier to deploy on server. To run simply:
+
+	$ node server-wrapper.js
+
+If this runs ok, you should be able to view at localhost:8123. Please feel free to change your port within server.js to suit
 
 
 ## Next Steps
@@ -37,4 +43,3 @@ However as requested this has been set up to run serverside as well. To run in s
 
 To leave feedback, open an issue in the
 [Issues section](https://github.com/2dareis2do/five-day-forecast/issues).
-
