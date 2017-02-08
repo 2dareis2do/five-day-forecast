@@ -1,0 +1,40 @@
+# 5 day weather forecast
+
+## About
+
+This is a 5 day weather forecaster that I have put together using javascript.
+
+I have used React to create this app.
+
+## Installation
+
+This app has been devleoped with node js and utilises various npm modules. Just be sure to have [Node](http://nodejs.org/) installed first. Then simply clone the repo as usual and then use:
+
+    $ npm install
+
+This should install any required dependencies needed in order to run the code.
+
+I have set up this demo to use webpack. Webpack is used to browserify all the required code to run in a clients machine. To run:
+
+    $ NODE_ENV=production node_modules/.bin/webpack -p
+
+This app should clientside on port run at be available localhost on port 8080 i.e. http://localhost:8080
+
+    $ node_modules/.bin/http-server src/static
+    
+However as requested this has been set up to run serverside as well. To run in serverside mode 
+
+    $ NODE_ENV=production node_modules/.bin/babel-node --presets 'react,es2015' src/server.js
+
+
+## Next Steps
+
+* Unit testing/Linting
+* Suggestions from you
+
+
+## Feedback
+
+To leave feedback, open an issue in the
+[Issues section](https://github.com/2dareis2do/five-day-forecast/issues).
+
