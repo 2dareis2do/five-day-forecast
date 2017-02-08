@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-  entry: path.join(__dirname, 'src', 'app-client.js'),
+  entry: path.join('babel-polyfill', __dirname, 'src', 'server.js'),
   resolve: {
     extensions: ['', '.js', '.jsx', '.scss'],
     alias: {
