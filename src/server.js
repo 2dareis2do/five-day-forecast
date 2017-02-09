@@ -1,6 +1,4 @@
 'use strict';
-// import "babel-polyfill";
-import 'whatwg-fetch'; // for old browsers
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
@@ -17,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 // define the folder that will be used for static assets
 app.get('*', Express.static(path.join(__dirname, 'static')));
 
-// // universal routing and rendering
+// universal routing and rendering
 app.get('*',(req, res) => {
     res.render('default', { title: 'The index page!'})
 });
