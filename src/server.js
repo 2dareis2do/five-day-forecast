@@ -1,5 +1,6 @@
 'use strict';
 // import "babel-polyfill";
+import 'whatwg-fetch'; // for old browsers
 import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
@@ -16,18 +17,9 @@ app.set('views', path.join(__dirname, 'views'));
 // define the folder that will be used for static assets
 app.use(Express.static(path.join(__dirname, 'static')));
 
-// universal routing and rendering
-app.get('/', (req, res) => {
-
-      // generate the React markup for the current route
-      let markup;
-        // if the current route matched we have renderProps
-        markup = renderToString(App);
-
-      // render the index template with the embedded React markup
-      res.render('index', { markup });
-    // }
-  // );
+// // universal routing and rendering
+app.use((req, res) => {
+    res.render('default', { title: 'The index page!'})
 });
 
 // start the server

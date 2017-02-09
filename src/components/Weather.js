@@ -49,7 +49,7 @@ export default class Weather extends React.Component {
   }
 
   importState(item) {
-    console.log('item',item);
+    // console.log('item',item);
     this.setState({city:item.city});
     this.setState({list:item.list});
   }
