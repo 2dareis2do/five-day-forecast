@@ -3,7 +3,7 @@ import path from 'path';
 import { Server } from 'http';
 import Express from 'express';
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+//import { renderToString } from 'react-dom/server';
 import App from './components/App';
 
 // initialize the server and configure support for ejs templates
