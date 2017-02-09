@@ -15,17 +15,18 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // define the folder that will be used for static assets
-app.use(Express.static(path.join(__dirname, 'static')));
+app.get('*', Express.static(path.join(__dirname, 'static')));
 
 // // universal routing and rendering
-app.use((req, res) => {
+app.get('*',(req, res) => {
     res.render('default', { title: 'The index page!'})
 });
 
 // start the server
 const port = process.env.PORT || 8123;
+const hostName = "127.0.0.1"; 
 const env = process.env.NODE_ENV || 'production';
-server.listen(port, err => {
+server.listen(port, hostName, err => {
   if (err) {
     return console.error(err);
   }
