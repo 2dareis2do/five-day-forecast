@@ -1,16 +1,8 @@
 'use strict';
 
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router';
-
-const weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?q=London,uk&units=metric&appid=7a9a047cd79788f2b905a34f1645d168';
-
-const options = {
-  method: "GET",
-  headers: {
-    "Content-Type": "application/json"
-  }
-}
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
@@ -23,7 +15,7 @@ function checkStatus(response) {
 }
 
 function parseJSON(response) {
-  return response.json()
+  return response.data;
 }
 
 export default class Weather extends React.Component {
@@ -37,19 +29,24 @@ export default class Weather extends React.Component {
 
   }
 
-  componentWillMount() {
+  componentDidMount() {
       this.importState = this.importState.bind(this);
-      fetch(weatherURL)
-          .then(checkStatus)
-          .then(parseJSON)
-          .then(this.importState)
-          .catch(function(err) {
-            console.log(err);
-          });
+      let weatherURL = this.props.weatherURL;
+      axios
+        .get(weatherURL)
+            .then(checkStatus)
+            .then(parseJSON)
+            .then(this.importState)
+            .catch(function(err) {
+              console.log(err);
+            });
+  }
+
+  componentWillMount() {
+
   }
 
   importState(item) {
-    // console.log('item',item);
     this.setState({city:item.city});
     this.setState({list:item.list});
   }
