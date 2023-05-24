@@ -8,7 +8,9 @@ I have used React to create this app.
 
 ## Installation
 
-This app has been devleoped with node js and utilises various npm modules. Just be sure to have [Node](http://nodejs.org/) installed first. Then simply clone the repo as usual and then use:
+This app has been developed with node js and utilises various npm modules. Just
+be sure to have [Node](http://nodejs.org/) installed first. Then simply clone 
+the repo as usual and then use:
 
     $ npm install
 
